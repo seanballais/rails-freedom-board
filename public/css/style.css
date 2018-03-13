@@ -1,0 +1,173 @@
+.message-submit {
+    margin-top: 3%;
+}
+
+html, body {
+    margin: 0;
+    max-width: 100%;
+
+    background-color: rgb(221, 221, 221);
+}
+
+header {
+    text-align: center;
+    margin: 2%;
+}
+
+header h1 {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+
+header p a {
+    color: rgb(0, 63, 122);
+
+    transition: all ease-in 0.5s;
+}
+
+header p a:hover {
+    color: rgb(0, 112, 216);
+    text-decoration: none;
+}
+
+article {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+article h5 {
+    font-weight: light;
+
+    text-align: center;
+}
+
+article div#article-contents {
+    background-color: rgb(240, 240, 240);
+
+    border-radius: 10px;
+    border: solid 1px rgb(165, 165, 165);
+    padding: 0;
+}
+
+article div#article-contents div > * {
+    margin: 0;
+}
+
+article div#article-contents div {
+    padding: 1%;
+}
+
+article div#article-contents div#message-writer form#form-writer {
+    display: none;
+}
+
+article div#article-contents div#posts div.post-item h5 {
+    font-weight: bold;
+    text-align: left;
+
+    margin-bottom: 1%;
+}
+
+article div#article-contents div#posts div.post-item h5.time-posted {
+    font-weight: 200;
+}
+
+article div#article-contents div#posts div.post-item p {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+article div#article-contents div#posts div.post-item {
+    border-top: solid 1px rgb(165, 165, 165);
+
+    word-wrap: break-word;
+}
+
+article div#article-contents div#posts div.post-item div.message h1,
+article div#article-contents div#posts div.post-item div.message h2,
+article div#article-contents div#posts div.post-item div.message h3,
+article div#article-contents div#posts div.post-item div.message h4,
+article div#article-contents div#posts div.post-item div.message h5,
+article div#article-contents div#posts div.post-item div.message h6 {
+    font-weight: 500;
+}
+
+article div#article-contents div#posts div.post-item div.message h1 {
+    font-size: 1.75em;
+}
+
+article div#article-contents div#posts div.post-item div.message h2 {
+    font-size: 1.65em;
+}
+
+article div#article-contents div#posts div.post-item div.message h3 {
+    font-size: 1.55em;
+}
+
+article div#article-contents div#posts div.post-item div.message h4 {
+    font-size: 1.45em;
+}
+
+article div#article-contents div#posts div.post-item div.message h5 {
+    font-size: 1.35em;
+}
+
+article div#article-contents div#posts div.post-item div.message h6 {
+    font-size: 1.3em;
+}
+
+footer {
+    padding: 1%;
+
+    text-align: center;
+}
+
+div#floating-message-textbox, div#floating-message-textbox-trigger {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+
+    border: 5px solid #5701b8;
+    box-shadow: 5px 5px #6e6b67;
+    background-color: white;
+
+    padding: 4%;
+}
+
+div#floating-message-textbox {
+    display: none;
+}
+
+div#floating-message-textbox h3 {
+    font-weight: lighter;
+    width: 100%;
+}
+
+div#floating-message-textbox h3 span {
+    float: right;
+
+    font-weight: bolder;
+
+    cursor: pointer;
+}
+
+div#floating-message-textbox form button {
+    margin-top: 3%;
+}
+
+div#floating-message-textbox-trigger {
+    font-size: 2em;
+    width: initial;
+
+    margin-right: 7%;
+    margin-bottom: 7%;
+
+    background-color: #5701b8;
+    cursor: pointer;
+}

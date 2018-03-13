@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <title>Freedom Board!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</head>
+<body class="container-fluid">
+    <header class="row-fluid">
+        <h1>Freedom Board</h1>
+        <p>by <a href="http://www.seanballais.com">Sean Francis N. Ballais</a> and <a href="https://twitter.com/pulmaats">Warren Kenn H. Pulma</a></p>
+    </header>
+    <article class="row align-items-center justify-content-center">
+        <h5 class="d-md-none">To write a message, click the <img src="img/write.png" width="16" height="16"> icon on the bottom right corner.</h5>
+        <div id="article-contents" class="col-md-7 col-xs-12">
+            <div id="message-writer" class="d-none d-md-block">
+                <form id="form-bait" class="form-group">
+                    <input type="text" class="form-control" id="inputMessage" placeholder="Write a message...">
+                </form>
+                <form id="form-writer" class="form-group" method="post" action="/post">
+                    <div class="form-group-row">
+                        <label for="inputMessage" class="col-form-label">Your message</label>
+                        <div>
+                            <textarea name="message" class="form-control" id="inputMessage" placeholder="Got something to say?" rows="5" required></textarea>
+                        </div>
+                        <p>Note: You may use Markdown (<a href="https://kramdown.gettalong.org">kramdown</a> flavor) to format your posts.</p>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="inputAuthor" class="col-form-label">Your name</label>
+                        <div>
+                            <input type="text" name="author" class="form-control" id="inputAuthor" placeholder="Who are you?" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary message-submit">Write message</button>
+                </form>
+            </div>
+            <div id="posts">
+                <% @posts.each do |post| %>
+                    <div class="post-item">
+                        <h5><%=h post.author %></h5>
+                        <h5 class="time-posted"><%= post.time_posted %></h5>
+                        <div class="message"><%= post.message %></div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <p>Copyright &copy; 2018 Sean Francis N. Ballais, and Warren Kenn H. Pulma. Project code is licensed under the <a href="https://github.com/seanballais/freedom-board/blob/master/LICENSE">MIT License</a> and is available over at <a href="https://github.com/seanballais/freedom-board">GitHub</a>.<span class="d-md-none"> Pencil icon by <a href="http://danielbruce.se/">Daniel Bruce</a>.</span></p>
+    </footer>
+    <div id="floating-message-textbox-trigger" class="d-md-none">
+        <!-- Icon by Daniel Bruce (http://danielbruce.se/) -->
+        <img src="img/write.png" width="64" height="64">
+    </div>
+    <div id="floating-message-textbox" class="container-fluid d-md-none">
+        <h3>Write a message<span id="close-button">&times;</span></h3>
+        <form class="form-group" method="post" action="/post">
+            <div class="form-group-row">
+                <label for="inputMessage" class="col-form-label">Your message</label>
+                <div>
+                    <textarea name="message" class="form-control" id="inputAuthor" placeholder="Say something..." rows="5" required></textarea>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <label for="inputAuthor" class="col-form-label">Your name</label>
+                <div>
+                    <input type="text" name="author" class="form-control" id="inputMessage" placeholder="What do we call you?" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Write message</button>
+        </form>
+    </div>
+</body>
+</html>
